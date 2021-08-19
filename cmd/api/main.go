@@ -29,7 +29,7 @@ type config struct {
 
 func main() {
 	var cfg config
-	flag.IntVar(&cfg.port, "port", 4000, "server port to listen on")
+	flag.IntVar(&cfg.port, "port", 6000, "server port to listen on")
 	flag.StringVar(&cfg.env, "env", "developement", "Applicatioon environment(develooppement/production)")
 	flag.Parse()
 
@@ -51,7 +51,6 @@ func main() {
 	logger.Println("starting server on port ", cfg.port)
 
 	err := srv.ListenAndServe()
-
 	if err != nil {
 		log.Println(err)
 	}
